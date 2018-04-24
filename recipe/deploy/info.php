@@ -27,7 +27,7 @@ task('deploy:info', function () {
         $what = "<fg=magenta>HEAD</fg=magenta>";
     }
 
-    writeln("✈︎ Deploying $what on <fg=cyan>{{hostname}}</fg=cyan>");
+    writeln("✈ Deploying $what on <fg=cyan>{{hostname}}</fg=cyan>");
 })
     ->shallow()
     ->setPrivate();
