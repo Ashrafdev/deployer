@@ -763,6 +763,11 @@ function locateBinaryPath($name)
         return run("which $nameEscaped");
     }
 
+    // Try `which`, should cover most other cases
+    if (commandExist("where")) {
+        return run("where $nameEscaped");
+    }
+
     // Fallback to `type` command, if the rest fails
     if (commandExist("type")) {
         $result = run("type -p $nameEscaped");
